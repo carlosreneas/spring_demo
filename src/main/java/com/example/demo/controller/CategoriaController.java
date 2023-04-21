@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.entities.Categoria;
+
 @RestController
 @RequestMapping("/categorias")
 public class CategoriaController {
@@ -29,12 +31,12 @@ public class CategoriaController {
 	}
 	
 	@PostMapping
-	public String addCategorias(@RequestBody String descripcion) {
+	public String addCategorias(@RequestBody Categoria categoria) {
 		return "Post categorias";
 	}
 	
 	@PutMapping("/{id}")
-	public String updateCategorias(@PathVariable String id, @RequestBody String descripcion) {
+	public String updateCategorias(@PathVariable String id, @RequestBody Categoria categoria) {
 		return "Put categorias " + id;
 	}
 	
